@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <title>Form Submit</title>
+</head>
+<body>
+    <section>
+        <h1>Validación de Formulario</h1>
+        <div class="form-validation">
+          <form class="contact-form">
+            <legend>Escribenos tu Consulta</legend>
+            <input title="Escriba su nombre" autocomplete="off" name="nombre" type="text" placeholder="Escriba su nombre" class="nombre" required/>
+            <input title="Escriba su email" autocomplete="off" name="email" type="email" placeholder="Escriba su mail" class ="email" required/>
+            <input title ="El asunto no puede ir vacio" autocomplete="off" name="asunto" type="text" placeholder="Asunto" class="asunto" required/>
+            <textarea data-pattern title="La consulta no debe pasar los 255 caracteres" autocomplete="off" name="consulta" type="text" placeholder="Consulta" class="consulta" required></textarea>
+            <button type="submit" class="submit">Enviar</button>
+            <div class="contact-form-loader none">
+              <img src="assets/SVG-Loaders-master/svg-loaders/puff.svg" alt="Cargando">
+            </div>
+            <div id="sent" class="none">
+              <p>Se ha enviado la consulta</p>
+            </div>
+          </form>
+      </div>
+      </section>
+      <script src="js.js"></script>
+</body>
+</html>

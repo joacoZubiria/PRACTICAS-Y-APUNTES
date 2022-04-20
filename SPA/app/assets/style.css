@@ -1,0 +1,31 @@
+html, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.preview{
+    width: 180px;
+}
+
+.author{
+    max-width: 60px;
+}
+
+.loader{
+    background-color: black;
+    color: black;
+    display: none;
+}
+.grid-fluid{
+    margin: 1rem auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}

@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-yellow: rgb(230, 189, 6);
+    --color-dark: rgb(31, 31, 31);
+    --form-ok-color: #4caf50;
+    --form-error-color: #f44336;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.form-validation{
+    width: 100%;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-validation form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-validation form input {
+    margin-top: 1rem;
+    width: 60%;
+}
+
+.consulta{
+    resize: none;
+    width: 60%;
+    margin-top: 1rem;
+    height: 8rem;
+}
+
+.none{
+    display: none;
+}
+
+.form-validation form button{
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 1.2rem;
+}
+
+.form-validation form [required]:valid{
+    border: thin solid var(--form-ok-color);
+}
+
+.form-validation form [required]:invalid{
+    border: thin solid var(--form-error-color);
+}
+
+.contact-form-error{
+    width: 60%;
+    font-size: 80%;
+    padding: 0.7rem 0;
+    background-color: var(--form-error-color);
+    color: #fff;
+    transition: all 800ms ease;
+}
+
+.contact-form-error.is-active{
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+@keyframes show-message{
+    0% {
+    visibility: hidden;
+    opacity: 0;
+}
+   100%{
+    visibility: visible;
+    opacity: 1;
+   }
+}

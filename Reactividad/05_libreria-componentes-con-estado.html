@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Componentes con Estado</h1>
+    <form id="todo-form">
+        <input type="text" name="task" id="task" placeholder="Tarea">
+        <input type="submit" name="" id="">
+    </form>
+    <br>
+    <ul id="todo-list"></ul>
+    <script src="./Component.js"></script>
+    <script>
+        const d = document;
+
+        const app = new Component({
+            el: '#todo-list',
+            data: {
+                todoList: []
+            },
+            template: function(props){
+                if(props.todoList < 1) return `<p><em>No hay tareas para hacer</em></p>`;
+
+                let todos = props.todoList.map(task => `<li>${task}</li>`);
+                return todos.join("");
+            }
+        })
+   
+        d.addEventListener('DOMContentLoaded', app.render);
+
+        d.addEventListener('submit', e => {
+            if(!e.target.matches('#todo-form')) return false;
+            e.preventDefault()
+            const $input = d.getElementById('task');
+            
+            const lastState = app.getState();
+            lastState.todoList.push($input.value);
+            app.setState({todoList: lastState.todoList});
+
+            $input.value = null;
+            $input.focus()
+        })
+    </script>
+</body>
+</html>

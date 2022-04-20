@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+aside{
+    width: 100vw;
+    height: 100vh;
+}
+section{
+    width: 100vw;
+    height: 100%;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    gap: 8px;
+}
+
+nav button{
+    background-color: rgb(212, 153, 153);
+    font-size: 1.6rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.none{
+    display: none;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+</head>
+<body>
+    <style>
+        #lyrics{
+            white-space: pre-wrap;
+        }
+        #wrapper{
+            display: flex;
+        }
+        #artist{
+            flex-basis: 50%;
+        }
+    </style>
+    <form id="form" style="border: 1px solid black; width: fit-content;">
+        <h1>Buscar Artista</h1>
+        <input type="search" name="artist" placeholder="Artist" required> <br>
+        <input type="search" name="song" placeholder="Lyrics..."> <br>
+        <input type="submit" name="submit" id="submit" value="Enviar">
+    </form>
+    <section id="wrapper">
+    <template id="artist">
+        <figure id="artist">
+            <img style="max-width: 300px;"src=""><br>
+            <span id="name"></span><br>
+            <span id="birth"></span><br>
+            <span id="country"></span><br>
+            <span id="genre"></span><br>
+            <h3>Biography</h3>
+            <p id="biography"></p>
+        </figure>
+    </template>
+    <template id="song">
+        <figure id="song">
+            <p id="lyrics"></p>
+        </figure>
+    </template>
+    <script src="js.js"></script>
+    </section>
+</body>
+</html>

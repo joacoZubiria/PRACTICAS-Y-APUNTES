@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Interfaz basada en el Estado</h1>
+    <form id="todo-form">
+        <input type="text" name="task" id="task" placeholder="Tarea">
+        <input type="submit" name="" id="">
+    </form>
+    <br>
+    <ul id="todo-list"></ul>
+    <script>
+        const d = document;
+
+        // State
+        const state = {
+            todoList: []
+        }
+
+        // UI
+        const template = () => {
+            if(state.todoList < 1) return `<p><em>No hay tareas para hacer</em></p>`;
+
+            let todos = state.todoList.map(task => `<li>${task}</li>`);
+            return todos.join("");
+        }
+
+        const render = () => {
+            const $list = d.getElementById('todo-list')
+            if(!$list) return;
+            $list.innerHTML = template();
+        }
+
+        d.addEventListener('DOMContentLoaded', render);
+
+        d.addEventListener('submit', e => {
+            if(!e.target.matches('#todo-form')) return false;
+            e.preventDefault()
+            const $input = d.getElementById('task');
+
+            state.todoList.push($input.value);
+            render();
+
+            $input.value = null;
+            $input.focus()
+        })
+    </script>
+</body>
+</html>
