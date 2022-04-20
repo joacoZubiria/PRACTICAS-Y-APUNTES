@@ -1,0 +1,17 @@
+1 - Definir y empezar a construir el archivo principal... luego hacer pruebas con rutas.
+
+2 - Crear un servicio con su respectiva ruta para la call.
+
+3 - Crear conexión a base de datos con mongoose.
+
+4 - Crear .env.config para las configuraciones de conexión a DB, creación del primer modelo movie y ajustes al servicio.
+
+5 - API REST, modificando el servicio y ajustandolo a las rutas.
+
+6 - Creacion del servicio User y Auth y sus rutas.
+
+7 - Instalación de CORS, creación de signup y mandar datos por Front.
+
+8 - Implementación de JWT
+
+9 - localstorage

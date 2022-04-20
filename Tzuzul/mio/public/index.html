@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <style>
+        .none{
+            display: none;
+        }
+    </style>
+    <section id="choose"> 
+        <h1>¿Qué quieres hacer?</h1>
+        <button id="select-signup">Registrarse</button>
+        <button id="select-login">Iniciar Sesión</button>
+    </section>
+    <section id="signup-section" class="none">
+        <h1>Registrarse</h1>
+        <p id="status"></p>
+        <form id="form-signup">
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required><br>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required><br>
+            <input type="text" name="emailS" placeholder="Email@something" required><br>
+            <input type="password" name="passwordS" placeholder="Password" required><br>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birth" min="1920-01-01" max="2004-01-01" required><br>
+            <input type="text" name="city" id="city" placeholder="City" required><br>
+            <input type="submit" name="submitS" value="Enviar"><br>
+        </form>
+    </section>
+    <section id="login-section" class="none">
+        <h1>Iniciar Sesión</h1>
+        <p id="status2"></p>
+        <form id="form-login">
+            <input type="text" name="email" id="email" placeholder="Email@something" required><br>
+            <input type="password" name="password" id="password" placeholder="Password" required><br>
+            <input type="submit" name="submit" id="submit" value="Enviar">
+        </form>
+        <a href="/auth/login/google">Iniciar sesión con Google</a>
+        <button id="select-review">Escribir reseña</button>
+        <button id="logout">Cerrar sesión</button>
+        <button id="fetchUsers">Obtener usuarios</button>
+    </section>
+
+    <section id="review-section" class="none">
+        <h1>Escribir reseña</h1>
+        <form id="form-review">
+            <label for="rating">Puntuación: </label>
+            <input name="rating" type="number" max="5" min="0" step=".1">
+            <label for="review">Reseña: </label>
+            <textarea name="review" id="review" cols="30" rows="10"></textarea>
+            <input type="submit">
+        </form>
+        <button id="logout">Cerrar sesión</button>
+    </section>
+    <script>
+        const d = document;
+        const $formLog = d.getElementById('form-login');
+        const $formSign = d.getElementById('form-signup');
+        const $fetchUsers = d.getElementById('fetchUsers');
+        const $status = d.getElementById('status');
+        const $status2 = d.getElementById('status2');
+        const $logout = d.getElementById('logout');
+        const $selectSignup = d.getElementById('select-signup');
+        const $selectLogin = d.getElementById('select-login');
+        const $selectReview = d.getElementById('select-review');
+        const $sectionLog = d.getElementById('login-section');
+        const $sectionSign = d.getElementById('signup-section');
+        const $sectionReview = d.getElementById('review-section');
+
+        function login(){
+            fetch('http://localhost:4000/auth/login', {
+                    method:'POST',
+                    headers:{
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: $formLog.email.value,
+                        password: $formLog.password.value
+                    })
+                }).then(res => {
+                    console.log(res);
+                    return res.json();
+                }).then(json => {
+                    if(json.status == false) throw json
+                    localStorage.setItem('token', json.token);
+                    $status2.textContent = 'Sesión iniciada';
+                    $formLog.reset();
+                })
+                .catch(err => {console.error(err); $formLog.reset()});
+        }
+        function signup(){
+            fetch('http://localhost:4000/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    firstName: $formSign.firstName.value,
+                    lastName: $formSign.lastName.value,
+                    birth: $formSign.birth.value,
+                    city: $formSign.city.value,
+                    email: $formSign.emailS.value,
+                    password: $formSign.passwordS.value
+                })
+            }).then(res => res.json())
+            .then(res => {
+                console.log(res);
+                localStorage.setItem('token', json.token);
+                $status.textContent = 'Registrado';
+            })
+        }
+        if(localStorage.getItem('token')) $status.textContent = 'Sesión iniciada';
+        else $status.textContent = 'Sin permisos';
+
+        d.addEventListener('submit', e => {
+            e.preventDefault();
+            if(e.target === $formLog){
+                login();
+            }
+            if(e.target === $formSign){
+                signup()
+                $formSign.reset();
+            }
+        });
+
+        d.addEventListener('click', e => {
+            if(e.target === $selectSignup){
+                $sectionLog.classList.add('none');
+                $sectionSign.classList.remove('none');
+                $sectionReview.classList.add('none');
+            }
+            
+            if(e.target === $selectLogin){
+                $sectionLog.classList.remove('none');
+                $sectionSign.classList.add('none');
+                $sectionReview.classList.add('none');
+            }
+
+            // if(e.target === $selectReview){
+
+            //     $sectionReview.classList.remove('none');
+            //     $sectionSign.classList.add('none');
+            //     $sectionLog.classList.add('none');
+            // }
+            if(e.target === $fetchUsers){
+                fetch('http://localhost:4000/users', {
+                // headers:{
+                //     'Authorization': 'Baerer ' + localStorage.getItem('token')
+                // }
+                credentials:"include"
+            })
+            .then(res => res.json())
+            .then(json => console.log(json))
+            }
+
+            if(e.target === $logout){
+                localStorage.removeItem('token');
+                fetch("http://localhost:4000/auth/logout",{
+                // headers:{
+                //     "Authorization":"Bearer "+localStorage.getItem("token")
+                // },
+                    method:"POST",
+                    credentials:'include'
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data)
+                    $status.textContent = "Sin permisos"
+                    $status2.textContent = "Sin permisos"
+                })
+                }
+        })
+
+    </script>
+</body>
+</html>

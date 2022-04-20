@@ -1,0 +1,18 @@
+<article> 
+    <a href="<%= link %> " target="_blank"><%= title %></a>
+    <div><%= description %> </div>
+</article>
+
+<h1>Estaciones</h1>
+<div>
+    <ol>
+    <% for( let i = 0; i < estaciones.length; i++ ) { %>
+        <li><%= estaciones[i][0] %> </li>
+        <ul>
+            <% for( let j = 0; j < estaciones[i][1].length; j++ ) { %>
+                <li><%= estaciones[i][1][j] %> </li>
+            <% } %>
+        </ul>
+    <% } %>
+    </ol>
+</div>

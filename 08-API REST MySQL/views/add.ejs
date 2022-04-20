@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> </title>
+</head>
+<body>
+    <h1><%= title %> </h1>
+
+    <form action="/" method="POST">
+        <label for="movie_id">IMDdb ID</label>
+        <input type="text" name="movie_id" required>
+        <br>
+        <br>
+        <label for="title">Títutlo: </label>
+        <input type="text" name="title" required>
+        <br>
+        <br>
+        <label for="release_year">Año: </label>
+        <input type="text" name="release_year" required>
+        <br>
+        <br>
+        <label for="rating">Rating: </label>
+        <input type="text" name="rating" required>
+        <br>
+        <br>
+        <label for="image">Imagen: </label>
+        <input type="text" name="image" required>
+        <br>
+        <input type="submit" value="Agregar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<h1> <a href="/"><%= title %></a></h1>
+
+<article> 
+     <table border>
+         <thead>
+             <th>ID</th>
+             <th>Title</th>
+             <th>Rating</th>
+             <th>Release</th>
+             <th>Image</th>
+             <th aria-colspan="2">
+                 <form action="/agregar" method="GET">
+                     <input type="submit" name="submit" value="Agregar">
+                 </form>
+             </th>
+         </thead>
+         <% data.forEach(movie => { %>
+          <tbody>
+              <td><%= movie.movie_id %> </td>
+              <td><%= movie.title %> </td>
+              <td><%= movie.rating %> </td>
+              <td><%= movie.release_year %> </td>
+              <td><img src="<%= movie.image %>" alt="<%= movie.title %> "></td>
+              <td>
+                  <form action="/editar/<%= movie.movie_id %>" method="GET">
+                    <input type="submit" value="Editar">
+                  </form>
+              </td>
+              <td>
+                <form class="form-delete" action="/eliminar/<%= movie.movie_id %>" method="POST">
+                    <input type="submit" value="Eliminar" class="eliminar">
+                </form>
+              </td>
+          </tbody>
+         <% }) %>
+     </table>
+</article>
+<script>
+document.addEventListener('submit', e => {
+    if(e.target.matches('.form-delete')){
+        e.preventDefault()
+        
+        let result = confirm('¿Estas seguro de eliminar la película?');
+
+        if(result){
+            e.target.submit();
+        }
+    }
+})
+</script>
