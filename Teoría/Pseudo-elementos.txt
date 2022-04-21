@@ -1,0 +1,11 @@
+PSEUDO-ELEMENTOS:
+
+: : first-line | NO FUNCIONA EN INLINE : modifica la primera linea.
+: : first-letter | NO FUNCIONA EN INLINE : modifica la primera letra.
+
+: : placeholder: es tuneada invisible para inputs mas q nada
+
+: : selection: lo que seleccionas con el cursor cambia de color.
+
+: : before | MODIFICA AL CONTENIDO : pone texto o cosas antes del cotenido, NO FORMA PARTE DEL DOM
+: : after | MODIFICA AL CONTENIDO : pone texto o cosas despues del contenido, NO FORMA PARTE DEL DOM

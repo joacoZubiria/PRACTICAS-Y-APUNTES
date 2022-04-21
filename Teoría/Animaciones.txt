@@ -1,0 +1,47 @@
+----------CONFIGURAR ANIMACIÓN------------
+@keyframes desplazarse{       // se necesita esto para empezar a crear animaciones.
+	from{
+  }
+	to{
+  }
+}
+
+       Ó
+
+@keyframes desplazarse{  // con los % se pueden poner nuevas animaciones a medida que va sucediendo.
+	0%{
+  }
+	40%{
+  }
+ 	70%{
+  }
+	100%{
+  }
+}
+
+----------OBJETO A ANIMAR--------------
+animation-name: desplazarse;
+
+animation-duration: 1s;
+
+animation-delay: 1s;
+
+animation-iteration-count: infinite; // cuantas veces se va a repetir la animación.
+
+animation-timing-function: ease; (default - arranca rapido y termina lento)  //trabaja con curvas de bezhier
+			    linear (no cambia el tiempo;
+		 	    ease-in (arranca despacio y termina rapido);
+			    ease-out (arranca rapido y termina despacio, es mas leve que ease);
+			    ease-in-out (arranca despacio, acelera, y termina despacio);
+			    cubic-bezier (0.04, 1.08, 0.76, 1.11); // (x,y,x,y) los dos primeros del primer punto, los ultimos dos del segundo punto.	
+
+animation-direction: normal; //flujo de la animación.
+                     reverse;
+		     alternate; (normal <-> reverse)
+		     alternate-reverse; (reverse <-> normal)
+
+animation-fill-mode: normal; //donde va a quedar el objeto animado.
+                     backwards; (obtendrá el primer fotograma clave y lo conserva).
+		     forwards; (se queda en la ultma instancia).
+		     both; (arranca con los valores del 0% o del 100%).
+

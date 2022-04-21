@@ -1,0 +1,59 @@
+h2{
+	display:inline; //hace q un elemento bloque sea un elemento en linea, por consiguiente, se le puede escribir al lado, pero no modificar su caja.
+   PERO
+	display:inline-block; //si se puede modificar.
+}
+
+PROPIEDADES DE LAS CAJAS:
+
+background-color: cambia color de las cajas
+
+padding: distancia entre el texto y la caja [padding-left:, padding-top:, padding-right:, padding-bottom:] //es una propiedad que podemos acortar (podemos modificar cada una de las partes o todas de una declarando padding)
+box{
+padding: 30px (eje Y) 20px (eje X) // es en sentido horario, si hacemos padding: 30px (top) 20px (right) 10px (bottom) 15px (left) ó padding: 30px (top) 20px (right & left) 40px (bottom).
+}
+
+height: alto                                                                                  box-sizing: content-box. queda fijo el tamaño pero no pierde espacio dentro de la caja, los bordes los expande por ejemplo.
+width: ancho // AMBOS SE ALTERAN CON EL PADDING, para fijar la altura y anchura hay que poner box-sizing: border-box. por lo tanto, no se altera con el padding.
+
+margin: distancia entre cajas // funciona igual que el padding al querer modificar ciertas partes [margin-top:, margin-right:, margin-bottom:, margin-left:];
+
+border-radius: redondear los bordes
+
+border: tiene muchas propiedades, por lo que se hace esto ->
+border: 4px (borde de la caja total) solid (es un estilo de tantos) blue (color del borde)
+
+
+	BOX MODEL:
+
+content (line-height) -> texto
+padding
+border
+margin
+
+//esos conforman el modelo de la caja
+
+box-shadow: sombra de la caja
+box-shadow: 4px (eje Y) 4px (eje X) 15px(tamaño de desenfoque) 0 (borde de la sombra) #000 (color);
+
+text-shadow: 10px (eje Y) 10px (eje X) #fff (color); // se pueden duplicar valores separandolos con una coma.
+
+transform: rotate(90deg) //rotacion de la caja.
+
+
+	OUTLINE:
+//NO OCUPA ESPACIO, SOLO ES VISUAL, funciona como borde para enmarcar.
+ 
+outline: 5px (todo o se puede declarar una parte como antes) solid (estilo) red (color);
+
+
+	POSITION:
+//POSICION DE LA CAJA, al declararle una posicion adquiere 4 variables nuevas: top, left, right, bottom. siendo top y left las dominantes.
+
+static: es la default, no esta posicionada
+relative: reserva el espacio de la caja
+absolute: se queda en el lugar definido, ya sea desde la caja contenedora (padre) o desde el viewport (si es que la caja contenedora no esta posicionada), la caja se ajusta al contenido, no reserva el espacio en la caja, por lo que otras cajas "ocupan" su espacio
+fixed: igual que absolute, solo que la posicion queda fija incluso si moves la pagina (como si te siguiera desde la misma posición).
+sticky: reserva el espacio, pero funciona como un fixed en el momento en el que llegamos a la posición de la página.
+
+z-index: es la profundidad de la caja, es decir, el eje Z, para sobreponerese. // ENTRE padres e hijos hay un problema. La caja padre no se puede subreponer a menos que el z-index del hijo sea -1 y no definir el z-index del padre

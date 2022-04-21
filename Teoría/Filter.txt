@@ -1,0 +1,14 @@
+Filter: agrega efecto a las fotos o cajas.
+
+filter: none (default)
+	blur(10px); // se desenfoca 10 px.
+	brightness(1); // (1),(0.5),(2),(100%), etc... siendo 1 el brillo default.
+	contrast(1); // (1),(0.5),(2),(100%), etc... siendo 1 el brillo default.
+	drop-shadow(offset-x offset-y blur-radius color);
+	greyscale(0); // siendo 1 el gris completo.
+	hue-rotate(10deg); // rota la gama de colores. Se puede trabajar con rad, grad o deg.
+	invert(100%); // invierte los colores.
+	opacity(1); // (1),(0.5),(2),(100%), etc... siendo 1 la opacidad default.
+	saturate(1); // (1),(0.5),(2),(100%), etc... siendo 1 la saturación default.
+	sepia(1); // (1),(0.5),(2),(100%), etc... siendo 0 el color sepia default.
+	url("filters.svg#filter-id"); // para poner filtros externos.

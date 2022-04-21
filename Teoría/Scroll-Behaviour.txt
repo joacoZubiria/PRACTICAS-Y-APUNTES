@@ -1,0 +1,3 @@
+scroll-behaviour: para el <a href=#someid>Click acá!</a> de una pagina.
+
+scroll-behaviour: smooth; // lo hace mas lento.

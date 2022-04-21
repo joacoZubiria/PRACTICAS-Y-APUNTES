@@ -1,0 +1,13 @@
+TRANSITION:
+
+transition-property: background; // hace transicion a la propiedad background del item.
+
+transition-duration: 1s; [cuanto va a durar la transición]
+
+transition-delay: 3s; [delay antes de que empiece y termine la transición]
+
+transition-timing-function: ease; (default - arranca rapido y termina lento)  //trabaja con curvas de bezhier
+			    linear (no cambia el tiempo;
+		 	    ease-in (arranca despacio y termina rapido);
+			    ease-out (arranca rapido y termina despacio, es mas leve que ease);
+			    ease-in-out (arranca despacio, acelera, y termina despacio);	

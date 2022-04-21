@@ -1,0 +1,80 @@
+ANOTACION: .grid-item:first-child = MAL
+           .grid-item:nth-child(1) = BIEN , busca la posición.
+            repeat(3, 150px); repite 4 veces lo indicado desp de la coma
+GRID: layouts
+
+_Grid container
+_Grid item
+_Gride cell
+_Grid Tracks (columna y row)
+_Grid Area (no diagonal, just column, row or both)
+_Grid Linea (Column Line y Row Line)
+
+---------Propiedades para Grid Container----------
+
+grid-template-rows: [dar filas] 150px 150px 150px (3 filas de 150px cada una) // repeat(4, 1fr); repite 4 veces lo indicado desp de la coma
+
+grid-template-column:[dar columnas] 150px 150px 150px (3 columnas de 150px cada una) //  repeat(2, 150px); repite 4 veces lo indicado desp de la coma
+
+grid-template-area: "header footer footer" "aside aside main" "aside aside main" "footer footer footer" // asigna espacios (mirar img)
+
+grid-auto-column o grid-auto-row: [crea una columna o fila automaticamente con todos los objetos, generalmente con los q sobran] 200px;
+grid-auto-flow: [determina si lo que sobra va a ser fila o columna] column (o) row // dense [rellena espacios implicitos]
+
+unidades: "auto" px, em, etc.. o "fr" 1fr, 2fr, is like flex-grow
+
+grid-gap: separar las celdas entre si menos del borde.{grid-row-gap y grid-column-gap}
+
+
+---------Propiedades para Grid Item----------
+
+grid-column: [le decis a algun item o celda en especifico para que se agrande] 1 / 3 (que tome el espacio hasta la columna 3) 1 / span 3 (empeza de la 1 y ocupa 3 columnas)
+
+{grid-column-start, grid-column-end}
+
+grid-row: [le decis a algun item o celda en especifico para que se agrande] 1 / 2 (que tome el espacio hasta la columna 2) 2 / span 5 (arranca desde la fila 2 y ocupa 5 filas) 
+
+{grid-row-start, grid-row-end}
+
+grid-area: header; // se le asigna el espacio para el grid-template-area;
+
+
+---------------------------------------------
+
+min-content: que mida el minimo del contenido
+max-content: que mida todo el contenido
+
+minmax(100px,300px): que mida como minimo 100px y como maximo 300px
+
+minmax(min-content, max-content)
+
+auto-fill: rellena con celdas a medida que se agranda (dependiendo la medida minima de la celda), si entra una mas se pone // repeat(auto-fill, minmax(100px, 1fr)
+
+auto-fit: cuando no hay mas objetos para posicionar, se escala
+
+------------- ALINEACION -------------------
+
+justify-item: justifica los items de manera horizontal [center, start, end, flex-end]
+
+align-item: justifica los items de manera vertical [center, start, end, flex-end]
+
+
+justify-content: justifica los items de manera horizontal [center, start, end, flex-end, space-around, space-between, space-evenly]
+
+align-content: justifica los items de manera vertical [center, start, end, flex-end, space-around, space-between, space-evenly]
+
+ALINEACION CELDAS:
+
+align-self: lo mismo q antes pero con una celda
+
+justify-self:lo mismo q antes pero con una celda
+
+place-self: align-self, justify-self; // place-self: start (para los dos) ó place-self: start, end
+
+order: 1 (un z-index pero de orden)
+
+--------------------AREAS------------------------
+
+grid-template-area: "header footer footer" "aside aside main" "aside aside main" "footer footer footer"; // asigna espacios (mirar img)
+
+grid-area: header; // se le asigna el espacio para el grid-template-area;

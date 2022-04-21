@@ -1,0 +1,15 @@
+concepto: responsive design: pagina q se adapta a cualquier dispositivo / se trabajan con medidas responsivas
+Esta medidas son
+em = 16px 
+vw = viewport width= vision en la pantalla en ancho / en porcentaje
+vh= viewport height= vision en la pantalla en alto / en porcentaje
+rem
+
+PERO si declaro el tamaño anteriormente y despues pongo "em", el valor de em se convierte en el valor declarado anteriormente.
+
+font-size: tamaño de la letra
+font-family: tipografía / si pones una tipografia pero no la tenes, es mejor declarar con una coma despues de la primera tipografia otro tipo de letra. Ejemplo: font-family: Geooorgia (no la tengo), sans-serif (si);
+line-height: tamaño DEL ESPACIO de la letra sobre el eje Y, se modifica desde el centro de la letra, es decir, 1 height es 1/2 positivo y 1/2 negativo. 
+font-weight: grosor de la letra
+font-stretch:
+font-variant:

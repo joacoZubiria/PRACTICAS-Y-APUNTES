@@ -1,0 +1,6 @@
+OVERFLOW: ajusta contenido a la caja.
+
+AUTO: detecta si el contenido se pasa de la caja (en el eje X y eje Y), y si es asi, mantiene el contenido dentro de la caja y con un scroll vas viendo todo. 
+SCROLL: obligatoriamente pone el scroll, sin importar si el contenido se pasa de la caja.
+overflow-x: modifica el contenido y caja en base al eje X.
+overflow-y: modifica el contenido y caja en base al eje Y.

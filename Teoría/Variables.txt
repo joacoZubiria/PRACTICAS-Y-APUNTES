@@ -1,0 +1,11 @@
+:root{
+--color-azul: blue;       // se declaró una variable la cual su valor es "blue", se puede utilizar en cualquier cosa q requiera color llamando a esta variable.
+}       
+
+div{
+--color-azul: red;   // se redefine la variable.
+
+background-color: var(--color-azul); // PARA LLAMAR UNA VARIABLE SE TIENE QUE UTILIZAR LA FUNCIÓN "var()".
+
+--color-verde-claro: lightgreen; // se declara una variable solo para los elementos div.
+}

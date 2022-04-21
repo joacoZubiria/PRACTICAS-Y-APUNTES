@@ -1,0 +1,17 @@
+DISPLAY:
+
+BLOCK: la caja ocupa todo un bloque.
+INLINE: la caja ocupa cierto espacio en linea. se ajusta al contenido
+INLINE-BLOCK: se le puede dar un ancho y alto a la caja.
+
+TABLE: tabla
+INLINE-TABLE: tabla en linea xd
+LIST-ITEM: estilo del circulito.
+TABLE-CELL: modifica una celda.
+TABLE-ROW: modifica una linea horizontal de la tabla.
+COLUM: modifica la columna de una tabla. 
+
+FLEX:
+GRID:
+INLINE-FLEX:
+INLINE-GRID:

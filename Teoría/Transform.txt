@@ -1,0 +1,16 @@
+Transfor:
+
+trasladar al objeto en el eje cartesiano.
+
+transform: translateX(100% - tamaño total de la caja);
+	   translateY(80px);
+	   translate(100px, 100px); // shorthand
+	   scaleX, scaleY
+	   scale(1); // aumenta su tamaño, para disminuirlo -> scale(0.5)
+	   skew(30deg); // se inclina.
+
+transform: scaleY(1.8) translate(40px);
+
+
+
+clip-path: polygon(0% 0%,0% 0%,0% 0%,0% 0%,0% 0%) // cada vertice del poligono en una posición

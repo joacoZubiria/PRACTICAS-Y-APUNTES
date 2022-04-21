@@ -1,0 +1,9 @@
+CURSOR:
+Cambia el cursor cuando pasas por una caja:
+
+cursor: pointer: pone la manito para hacer click.
+cursor: row-resize: para cambiar el tamaño.
+
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+
+SE COMBINA MUY BIEN CON EL :ACTIVE

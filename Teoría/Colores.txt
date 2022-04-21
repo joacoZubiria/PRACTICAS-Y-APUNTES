@@ -1,0 +1,17 @@
+COLORIZACION:
+
+ColorName: pones el color por su nombre, o por su posicion en el coso hexadecimal. background = darksalomon ò #fff
+
+
+RGB: red green blue
+
+por ejemplo: background: rgb(0,0,0) // 0 red, 0 green, 0 blue = negro. MAX 255 PARA CADA COLOR.
+
+
+RGBA: red green blue alpha(mofifica opacidad)
+
+por ejemplo: background: rgba(155,255,155,.5) // 155 red, 255 green, 155 blue, 0.5 opacidad.
+
+
+HEXADECIMAL: (foto) 
+https://www.google.com/search?q=html+color+picker&rlz=1C1CHBF_esAR837AR837&oq=html+color+&aqs=chrome.1.69i57j0i512l9.7359j0j7&sourceid=chrome&ie=UTF-8

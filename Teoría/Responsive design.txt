@@ -1,0 +1,5 @@
+Modificar resoluciones para diferentes dispositivos.
+
+@media screen and (min-width:400px) and (max-width: 650px){
+background: red;
+}

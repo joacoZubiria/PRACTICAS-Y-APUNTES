@@ -1,0 +1,47 @@
+Flex: 
+
+flex container:
+div{
+display: flex --> div pasa a ser flex, es un inline-block, y todos los items hijos directos se convierten en flex items,
+lo que hace que se agrupen en linea, modifica el with de los objetos para mantenerlos en linea y no modifica su altura.
+se puede limitar el minimo de anchura con flex: min-with; en el flex-item.
+}
+
+flex-direction: [maneja la direccion de las cajas] row (linea), row-reverse (en línea pero al revés), column y column-reverse;
+
+flex-wrap: wrap [mantiene las cajas en su width, pero si achicas la resolución esta van para abajo], no-wrap [no lo hace xd], 
+wrap-reverse [lo mismo q wrap pero al reves].
+
+flex-flow: [combina flex direction con flex wrap] column wrap;
+
+justify-content (main-axis): center [centra las cajas], space-around [todas mantienen un mismo margen], space-between [quiere que haya el 
+mayor espacio entre cajas], space-evenly [todas tienen el mismo margen].
+
+align-items (cross-axis - generalmente se usa para alinear en una sola línea): stretch [default, mantiene estrechos en su lugar ajustando 
+el height si no esta definido], center [pone al contenido en el medio], flex-start [al inicio], flex-center [al centro], flex-end [al final],
+baseline [mismo efecto que flex-end solo que se usa para combinarlo con wrap].
+
+align-content (alinea varias lineas en un solo lado, el mismo efecto que algin-items pero con mas líneas): mismos modif q align-items.
+
+
+
+flex-item: particular en cada uno.
+
+align-self: stretch, center, flex-start, flex-center, flex-end, baseline [mismo efecto que flex-end solo que se usa para combinarlo con wrap].
+
+margin: [funciona de manera dif, funciona p.ej. {margin-left: auto; margin-right: auto} para centrar].
+
+flex-grow: 1 [el espacio sobrante se lo reparte entre las cajas, haciendola flexible al cambiar la resolución, se combina con min-width y wrap]
+se reparte espacio cuando todas las cajas midan igual.
+
+flex-basis: [es literalmente el width, con mas importancia]
+
+flex-shrink: 1 [cede o le ceden espacio las otras cajas para que se achiquen menos cuando el width establecido tenga que ser menor], en 0 no cede espacio
+en 0.5 le dan.
+
+flex: [flex-grow, flex-shrink, flex-basis combinados]
+
+order: [ordena las cajas en el main-axis, mientras mas grande sea el número, mas adelante va a estar dependiendo donde apunte el main-axis]
+
+
+

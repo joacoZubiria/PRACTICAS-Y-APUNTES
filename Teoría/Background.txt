@@ -1,0 +1,29 @@
+Background:
+
+Propiedads:
+
+background-color: yellow;
+--
+background-image: url();
+
+background-size: 100%(x) 300px(y); // para el posicionamiento de la imagen.
+usa las propiedades del object-fit, como cover.
+
+background-repeat: no-repeat; // no repite la imagen.
+		   repeat;
+
+background-clip: border-box; // desde donde empieza a mostrar la imagen, la recorta.
+		 content-box;
+		 padding-box;
+
+background-origin: border-box; // desde donde empieza a mostrar la imagen, mostrando toda la imagen.
+		   content-box;
+		   padding-box;
+
+background-position: top/right/bottom/left/center (x) ++ top/right/bottom/left/center (y); // donde se posiciona la imagen
+
+background-attachment: scroll; // es parte del contenedor de la caja.
+		       fixed; // es parte del viewport (efecto tocho) gnz page.
+--
+
+background: #ffffff url("img_tree.png") no-repeat right top;

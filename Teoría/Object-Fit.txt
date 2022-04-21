@@ -1,0 +1,8 @@
+OBJECT-FIT:
+
+object-fit: mantiene la imagen a su resolucion real, pero la va modificando en base en cuanto pongamos (sin modificar la real)
+
+object-fit: contain: mantiene si o si la resolucion real, solo modifica su tamaño en pantalla.
+object-fit: cover: cubre el espacio en pantalla dispuesto sin modificar su resolución.
+object-fit: none: mantiene resolucion real de la imagen.
+object-fit: scale-down: toma la propiedad mas chica, es decir, si la resolucion es mas chica, deja esa, si el contenido es mas chico, adapta la imagen al contenedor

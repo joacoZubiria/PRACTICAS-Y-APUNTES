@@ -1,0 +1,10 @@
+	Object-Position:
+Posiciona al objeto dentro de una caja.
+
+object-position: left: al tope de izq.
+object-position: right: al tope de derecha.
+object-position: bottom: al tope de abajo.
+object-position: top: al tope de arriba.
+
+se puede ir moviendo por el eje X e Y dando medidas.
+object-position: -4em,5em

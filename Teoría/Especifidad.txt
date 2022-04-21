@@ -1,0 +1,19 @@
+tipos de selectores css
+
+Universal: *
+De tipo: por elemento, like button, h2, h1, p, forum. A TODOS.
+CLASES: modifica a toda una clase, .titulo-h2
+ID: todos los asignados con el mismo ID se modifican, SE RECOMIENDA 1 ID PARA UN ELEMENTO SOLO, #element
+Por atributo: modifica a los elementos q contengan el atributo a modificar, [jiji="lol"]
+Descendiente: vas seleccionando elementos dentro de otro elemento. h3 p
+pseudo-clases:
+
+Cascada: Entre mismos atributos de la misma jerarquía se toma el último, o se toma como principal al de mayor jerarquía
+
+ 
+Especifidad: 
+1_ !important
+2_ estilo en linea = style="color:green"
+3_ id
+4_ clases, pseudo-clases, atributos
+5_ elementos, pseudo-elementos

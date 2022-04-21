@@ -1,0 +1,13 @@
+PSEUDO-CLASES:
+
+: hover: escucha al elemento cunado esta el mouse encima.
+
+: link: modifica los links no visitados
+
+: visited: modifica los links visitados
+
+: active: modifica una caja cuando presionas click, cuando dejas de presionar esta vuelve a lan normalidad
+
+: focus: cuando seleccionamos al objeto, este se modificará.
+
+: lang: language, detecta cierto lenguaje declarado y modifica el texto.

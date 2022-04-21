@@ -1,0 +1,3 @@
+direction: direccion del contendio.
+
+direction: ltr (left to right) / rtl (right to left) / initial (default) / inherit (lo hereda de la caja padre).

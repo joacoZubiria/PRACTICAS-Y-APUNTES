@@ -1,0 +1,2 @@
+-moz-color: red; // color para mozilla firefox.
+-webkit-backgound-color: blue; // para google chrome.
